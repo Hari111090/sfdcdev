@@ -1,0 +1,28 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <aura:attribute name="v.vwlogo" type="Boolean" default="false" />
+    <aura:handler name="change" value="{!v.vwlogo}" action="{!c.spinnerDisplayHandler}"/>
+    $('#logo-loader').loadgo('loop', 10);
+    Loadgo.loop(document.getElementById('logo-loader'), 10);
+	
+    <div class="slds-align--absolute-center">
+        <lightning:spinner aura:id="spinner" variant="brand" size="large" class="slds=hide"/>
+    </div>
+    <div class="loader"></div>
+<div class="outer-box">
+<nav class="social">  
+  <div class="box">
+  <p>Showing a display Loading Icon Until the Page Loads Completely..</p>
+  </div>
+<ul>
+            <li><a target="_blank" href="http://virender-bartwal.blogspot.in/"><i class="fa fa-link fa-3x text-success" aria-hidden="true"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/veerbartwal"><i class="fa fa-twitter fa-3x text-success" aria-hidden="true"></i></a></li>
+            <li><a target="_blank" href="https://codepen.io/bartwal"><i class="fa fa-codepen fa-3x text-success" aria-hidden="true"></i></a></li>
+            <li><a target="_blank" href="https://in.linkedin.com/in/local-seo-freelancer-delhi"><i class="fa fa-linkedin-square fa-3x text-success" aria-hidden="true"></i></a></li>
+  
+  <li><a target="_blank" href="https://plus.google.com/+Virender-bartwalBlogspotIn"><i class="fa fa-google-plus fa-3x text-success" aria-hidden="true"></i></a></li>
+            </ul>
+</nav>
+  </div>
+	
+</aura:component>

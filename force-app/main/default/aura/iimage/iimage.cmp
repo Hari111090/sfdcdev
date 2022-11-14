@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+<aura:attribute name="type" type="String" default="spears" />
+<aura:attribute name="width" type="Integer" default="32" />
+<aura:attribute name="height" type="Integer" default="32" />
+<aura:attribute name="color" type="String" default="red" />
+<aura:attribute name="show" type="Boolean" default="false" />
+<aura:handler name="change" value="{!v.show}" action="{!c.changeHandler}"/>
+    <div aura:id="spears" style='display:none'>
+  <![CDATA[
+     <svg  viewBox="0 0 30 30" width="wwww" height="hhhh" fill="cccc">
+     ....
+     </svg>
+  ]]>
+</div>
+<div aura:id="bubbles" style='display:none'>
+  <![CDATA[
+     <svg  viewBox="0 0 30 30" width="wwww" height="hhhh" fill="cccc">
+       ....
+     </svg>
+  ]]>
+</div>
+	
+</aura:component>

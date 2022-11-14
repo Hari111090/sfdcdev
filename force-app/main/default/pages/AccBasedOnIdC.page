@@ -1,0 +1,23 @@
+<apex:page controller="AccBasedOnIdC">
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock title="Account Id" id="op">
+            Account Ids: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:selectList value="{!selectedAccId}" size="1" >                                 
+                <apex:selectOptions value="{!AccountIds}"/>
+                <apex:actionSupport event="onchange" action="{!cont}" />
+            </apex:selectList>
+            
+            <br/><br/>
+            
+            <apex:outputPanel rendered="{!isShow}" id="op2">
+                Account Details: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br/><br/>
+                Id:  <apex:outputField value="{!acc.Id}" /><br/>
+                Name:  <apex:outputField value="{!acc.Name}" /><br/>
+                Rating:  <apex:outputField value="{!acc.Rating}" />
+            </apex:outputPanel>
+
+        </apex:pageBlock>               
+    </apex:form>
+</apex:page>

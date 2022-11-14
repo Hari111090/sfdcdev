@@ -1,0 +1,61 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global"
+                controller="fileViewerCtrl">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="selectedDocumentId" type="string"/>
+    <aura:attribute name="lstContentDoc" type="List"/>
+    <aura:attribute name="hasModalOpen" type="boolean" default="false"/> 
+    <aura:attribute name="checkval" type="string" default="download"/>
+            <aura:attribute name="checkval1" type="string" default="Einstein"/> 
+    <div class="VGA_UserGuide VGA_CLMS_grid_mD slds-grid slds-card slds-wrap cVGA_CLMS_DealerTrafficDetailPage">
+    <div class="vgaUsercontainer">
+                <aura:iteration items="{!v.lstContentDoc}" var="CD">
+           <aura:if isTrue="{!CD.Title == 'download'}">    
+     <div class="vga_UserGuideGrid slds-box">
+        <p class="slds-text-heading_small">
+          <lightning:icon iconName="action:record" alternativeText="Dealer Portal" title="Dealer Portal" />
+                                          <div class="slds-page-header__title" title="{!CD.Title}">
+                            <a onclick="{!c.getSelected}" data-Id="{!CD.Id}">{!CD.Title}</a>
+                        </div>
+
+          </p>
+      </div></aura:if>
+       
+        </aura:iteration>
+                <aura:iteration items="{!v.lstContentDoc}" var="CD">
+       <aura:if isTrue="{!CD.Title == 'Einstein'}">    
+      <div class="vga_UserGuideGrid slds-box">
+        <p class="slds-text-heading_small">
+      <lightning:icon iconName="action:join_group" alternativeText="Dealer Portal" title="Dealer Portal" />                                  <tr>
+                    <th scope="row">
+                        <div class="slds-page-header__title" title="{!CD.Title}">
+                            <a onclick="{!c.getSelected}" data-Id="{!CD.Id}">{!CD.Title}</a>
+                        </div>
+                    </th>
+                </tr>  
+          </p>
+          
+      </div>
+          </aura:if>
+        </aura:iteration>
+        
+
+    <aura:if isTrue="{!v.hasModalOpen}">
+        <section onclick="{!c.closeModel}"
+                 role="dialog"
+                 aria-modal="true"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__content slds-p-around_medium slds-text-align_center"
+                     style="background: transparent;">
+                    <div style="width: 50%; margin: 0 auto; text-align: left">
+                        <lightning:fileCard fileId="{!v.selectedDocumentId}"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+        </div>
+    </div>
+</aura:component>
