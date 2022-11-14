@@ -1,4 +1,3 @@
-/*Account controller creation*/
 public class accountcontroller {
   public string accid {get; set;}
     public Account SelectedAcc{get;set;}

@@ -1,12 +1,5 @@
-/**
- * @description       : 
- * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
- * @group             : 
- * @last modified on  : 11-14-2022
- * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
-**/
 public class AccBasedOnIdC {
-  //test  
+    
     public String selectedAccId{get;set;}
     public Boolean isShow {get;set;}
     public Account acc{get;set;}
